@@ -6,9 +6,9 @@ from blog.models import Article
 
 def all_article(request):
     article = Article.objects.order_by('-date')
-    return render(request, 'blog/all_blogs.html', {'blogs': article})
+    return render(request, 'blog/home blog.html', {'blogs': article})
 
 
-def detail(request, article_id):
-    article = get_object_or_404(Article, pk=article_id)
+def detail(request, blog_id):
+    article = get_object_or_404(Article, pk=blog_id)
     return render(request, 'blog/detail.html', {'blog': article})
